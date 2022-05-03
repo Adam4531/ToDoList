@@ -1,7 +1,12 @@
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDateTime;
 import java.util.HashMap;
 
-public class ToDoList { //ToDoListFactory - jak ma to się odbywać?
+@Getter
+@Setter
+public class ToDoList { //TODO ToDoListFactory - jak ma to się odbywać? JavaBean?
     private String title;
     private HashMap<Integer, String> thingsToDo;
     private LocalDateTime createAt;
