@@ -5,9 +5,12 @@ public abstract class Menu {
     String option3 = "3. Update To-Do List";
     String option4 = "4. Delete one of existing To-Do List";
     String goBack = "Press \"~\" to go back";
-    String end = "Press \"\\\" to end";
+    String end = "0. End";
 
-    public Option show(int command){
+    public static Option show(int command){
+        StringBuilder stringBuilder = new StringBuilder();
+
+
         switch (command){
             case 1:
                 return Option.CREATE;
