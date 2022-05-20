@@ -8,5 +8,4 @@ public abstract class Menu {
     String end = "0. End";
 
 
-    //TODO metoda z switch case do wyboru opcji
 }

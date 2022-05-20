@@ -2,6 +2,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 @Getter
@@ -10,6 +11,7 @@ public class ToDoList { //TODO ToDoListFactory - jak ma to się odbywać? JavaBe
     private String title;
     private HashMap<Integer, String> thingsToDo;
     private LocalDateTime createAt;
+    private ArrayList<Boolean> isDone;
 //    private LocalDateTime doneAt;
 
 
