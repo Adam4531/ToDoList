@@ -1,5 +1,9 @@
 public class Main {
     public static void main(String[] args) {
-        ToDoListRunner.run();
+        display();
+    }
+
+    static void display(){
+        System.out.println();
     }
 }

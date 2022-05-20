@@ -7,23 +7,6 @@ public abstract class Menu {
     String goBack = "Press \"~\" to go back";
     String end = "0. End";
 
-    public static Option show(int command){
-        StringBuilder stringBuilder = new StringBuilder();
-
-
-        switch (command){
-            case 1:
-                return Option.CREATE;
-            case 2:
-                return Option.READ;
-            case 3:
-                return Option.UPDATE;
-            case 4:
-                return Option.DELETE;
-            default:
-                throw new IllegalArgumentException("Command were not recognised");
-        }
-    }
 
     //TODO metoda z switch case do wyboru opcji
 }
