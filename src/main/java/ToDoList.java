@@ -3,23 +3,25 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
 @Setter
 @Builder
-public class ToDoList { //TODO ToDoListFactory - jak ma to się odbywać?
+public class ToDoList {
     private String title;
     private List<String> thingsToDo;
-    private LocalDateTime createAt;
+    private final LocalDateTime createAt;
     private List<Boolean> isDone;
     private LocalDateTime doneAt;
 
 
-    public ToDoList(String aTitle, List<String> aThingsToDo, LocalDateTime aCreateAt) {
+    public ToDoList(String aTitle) {
         title = aTitle;
-        thingsToDo = aThingsToDo;
-        createAt = aCreateAt;
+        thingsToDo = new ArrayList<>();
+        isDone = new ArrayList<>();
+        createAt = LocalDateTime.now();
     }
 
 
@@ -29,13 +31,13 @@ public class ToDoList { //TODO ToDoListFactory - jak ma to się odbywać?
     }
 
 
-
     public boolean isListDone(){
         for (Boolean isDone: isDone) {
             if(isDone.equals(false)){
                 return false;
             }
         }
+        this.doneAt = LocalDateTime.now();
         return true;
     }
 
