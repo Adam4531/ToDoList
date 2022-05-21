@@ -1,25 +1,46 @@
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.List;
 
 @Getter
 @Setter
-public class ToDoList { //TODO ToDoListFactory - jak ma to się odbywać? JavaBean?
+@Builder
+public class ToDoList { //TODO ToDoListFactory - jak ma to się odbywać?
     private String title;
-    private HashMap<Integer, String> thingsToDo;
+    private List<String> thingsToDo;
     private LocalDateTime createAt;
-    private ArrayList<Boolean> isDone;
-//    private LocalDateTime doneAt;
+    private List<Boolean> isDone;
+    private LocalDateTime doneAt;
 
 
-    public ToDoList(String aTitle, HashMap<Integer, String> aThingsToDo, LocalDateTime aCreateAt) {
+    public ToDoList(String aTitle, List<String> aThingsToDo, LocalDateTime aCreateAt) {
         title = aTitle;
         thingsToDo = aThingsToDo;
         createAt = aCreateAt;
     }
+
+
+    public void addElement(String element){
+        thingsToDo.add(element);
+        isDone.add(false);
+    }
+
+
+
+    public boolean isListDone(){
+        for (Boolean isDone: isDone) {
+            if(isDone.equals(false)){
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+
 
 
 }
