@@ -44,6 +44,18 @@ public class ToDoList {
 //      System.out.println();
     }
 
+    @Override
+    public String toString(){
+        StringBuilder list = new StringBuilder();
+        int i = 1;
+
+        for (String element: thingsToDo) {
+            list.append(String.format("%d. %s\n",i , element));
+            i++;
+        }
+        return list.toString();
+    }
+
 
 
 
