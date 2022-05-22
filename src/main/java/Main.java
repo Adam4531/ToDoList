@@ -4,7 +4,7 @@ public class Main {
         display();
     }
 
-    static void display(){
+    static void display(){ //TODO Create display menu and make a tests
         System.out.println();
     }
 }
