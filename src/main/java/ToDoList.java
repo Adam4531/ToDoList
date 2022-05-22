@@ -1,14 +1,10 @@
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-@Getter
-@Setter
-@Builder
+@Data
 public class ToDoList {
     private String title;
     private List<String> thingsToDo;
