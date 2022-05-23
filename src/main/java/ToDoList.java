@@ -41,7 +41,6 @@ public class ToDoList {
         String element = thingsToDo.get(index);
         thingsToDo.add(index, element + " \u2705");
         isDoneList.set(index, true);
-//      System.out.println();
     }
 
     @Override
