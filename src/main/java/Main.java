@@ -4,6 +4,19 @@ public class Main {
     public static void main(String[] args) {
         int choice = display();
 
+        while (choice != 3) {
+            switch (choice) {
+                case 1:
+                    ToDoListFactory.create();
+                    break;
+                case 2:
+
+                    break;
+                default:
+                    System.out.println("Enter a valid option (from 1 to 3)");
+            }
+        }
+
     }
 
     static int display() {
@@ -18,21 +31,19 @@ public class Main {
         return input.nextInt();
     }
 
-    static void menu(int option) {
-        while (option != 0) {
-            switch (option) {
-                case 1:
-                    ToDoListUtils.create();
-                    break;
-                case 2:
-
-                    break;
-                case 3:
-                    break;
-                default:
-                    System.out.println("Enter a valid option (from 1 to 3)");
-            }
-        }
+//    static void menu(int option) {
+//        while (option != 3) {
+//            switch (option) {
+//                case 1:
+//                    ToDoListFactory.create();
+//                    break;
+//                case 2:
+//
+//                    break;
+//                default:
+//                    System.out.println("Enter a valid option (from 1 to 3)");
+//            }
+//        }
     }
 
 }
