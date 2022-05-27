@@ -19,7 +19,7 @@ public class Main {
     }
 
     static void menu(int option) {
-        while (option != -1) {
+        while (option != 0) {
             switch (option) {
                 case 1:
                     ToDoListUtils.create();

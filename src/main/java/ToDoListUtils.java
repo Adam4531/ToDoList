@@ -1,6 +1,14 @@
-public abstract class ToDoListUtils {
+import java.util.Scanner;
 
-    public static ToDoList create(String name){
+public class ToDoListUtils {
+
+    public static ToDoList create(){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Name a new list: ");
+        System.out.print("> ");
+        String name = input.next();
+
+
         return new ToDoList(name);
     }
 }
