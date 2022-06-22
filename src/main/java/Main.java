@@ -1,6 +1,9 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
+    public static List<ToDoList> lists = new ArrayList<>();
+    static int counter = 0;
+
     public static void main(String[] args) {
         int choice = displayMainMenu();
 
@@ -10,13 +13,17 @@ public class Main {
                     create();
                     break;
                 case 2:
-
+                    showLists();
                     break;
                 default:
                     System.out.println("Enter a valid option (from 0 to 2)");
             }
         }
 
+    }
+
+    private static void showLists() {
+        lists.stream().forEach(s -> System.out.println(s.getTitle()));
     }
 
     static int displayMainMenu() {
@@ -40,6 +47,10 @@ public class Main {
         return scanner.nextLine();
     }
 
+    public static boolean save(ToDoList aToDoList){
+        lists.add(aToDoList);
+
+        return lists.contains(aToDoList);
     }
 
-
+    }
