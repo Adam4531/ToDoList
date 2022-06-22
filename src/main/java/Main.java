@@ -2,7 +2,6 @@ import java.util.*;
 
 public class Main {
     public static List<ToDoList> lists = new ArrayList<>();
-    static int counter = 0;
 
     public static void main(String[] args) {
         int choice = displayMainMenu();
@@ -12,7 +11,7 @@ public class Main {
                 case 1:
                     create();
                     break;
-                case 2:
+                case 2: //TODO choose one list for CRUD
                     showLists();
                     break;
                 default:
@@ -23,7 +22,7 @@ public class Main {
     }
 
     private static void showLists() {
-        lists.stream().forEach(s -> System.out.println(s.getTitle()));
+        lists.stream().distinct().forEach(s -> System.out.println(s.getTitle()));
     }
 
     static int displayMainMenu() {
