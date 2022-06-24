@@ -38,7 +38,7 @@ public class Main {
         return input.nextInt();
     }
 
-    static void displayCurrentListMenu(){
+    static void displayCurrentListMenu() {
         Scanner input = new Scanner(System.in);
         final ToDoList toDoList = lists.get(input.nextInt());
         System.out.println("You chose: " + toDoList);
@@ -51,23 +51,23 @@ public class Main {
 
     }
 
-    public static boolean create(){
+    public static boolean create() {
         ToDoList toDoList = new ToDoList(setTitle());
         save(toDoList);
 
         return lists.contains(toDoList);
     }
 
-    public static String setTitle(){
+    public static String setTitle() {
         System.out.println("Name a new list: ");
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine();
     }
 
-    public static boolean save(ToDoList aToDoList){
+    public static boolean save(ToDoList aToDoList) {
         lists.add(aToDoList);
 
         return lists.contains(aToDoList);
     }
 
-    }
+}
