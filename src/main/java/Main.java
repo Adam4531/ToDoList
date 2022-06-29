@@ -35,7 +35,10 @@ public class Main {
         System.out.println("2. Choose existing list");
         System.out.println("=================");
         System.out.print("> ");
-        return input.nextInt();
+        int choice = input.nextInt();
+        input.close();
+
+        return choice;
     }
 
     static void displayCurrentListMenu() {
@@ -44,24 +47,27 @@ public class Main {
         System.out.println("You chose: " + toDoList);
         System.out.println("What do you want to do with it?");
         System.out.println("1. Print elements");
-        System.out.println("1. Add elements");
-        System.out.println("2. Check element");
-        System.out.println("3. Delete element");
-        System.out.println("4. Delete list");
+        System.out.println("2. Add elements");
+        System.out.println("3. Check element");
+        System.out.println("4. Delete element");
+        System.out.println("5. Delete list");
 
+
+        input.close();
     }
 
-    public static boolean create() {
-        ToDoList toDoList = new ToDoList(setTitle());
+    public static ToDoList create() {
+        String title = setTitle();
+        ToDoList toDoList = new ToDoList(title);
         save(toDoList);
 
-        return lists.contains(toDoList);
+        return toDoList;
     }
 
-    public static String setTitle() {
+    public static String setTitle() { //FIXME NoSuchElementException
         System.out.println("Name a new list: ");
         Scanner scanner = new Scanner(System.in);
-        return scanner.nextLine();
+        return scanner.next();
     }
 
     public static boolean save(ToDoList aToDoList) {
