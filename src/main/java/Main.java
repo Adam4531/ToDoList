@@ -2,6 +2,7 @@ import java.util.*;
 
 public class Main {
     public static List<ToDoList> lists = new ArrayList<>();
+    public static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
         int choice = displayMainMenu();
@@ -19,7 +20,7 @@ public class Main {
                     System.out.println("Enter a valid option (from 0 to 2)");
             }
         }
-
+        input.close();
     }
 
     private static void showLists() {
@@ -27,7 +28,7 @@ public class Main {
     }
 
     static int displayMainMenu() {
-        Scanner input = new Scanner(System.in);
+//        Scanner input = new Scanner(System.in);
         System.out.println("Main Menu:");
         System.out.println("=================");
         System.out.println("0. Exit");
@@ -42,7 +43,6 @@ public class Main {
     }
 
     static void displayCurrentListMenu() {
-        Scanner input = new Scanner(System.in);
         final ToDoList toDoList = lists.get(input.nextInt());
         System.out.println("You chose: " + toDoList);
         System.out.println("What do you want to do with it?");
@@ -51,9 +51,6 @@ public class Main {
         System.out.println("3. Check element");
         System.out.println("4. Delete element");
         System.out.println("5. Delete list");
-
-
-        input.close();
     }
 
     public static ToDoList create() {
@@ -66,8 +63,8 @@ public class Main {
 
     public static String setTitle() { //FIXME NoSuchElementException
         System.out.println("Name a new list: ");
-        Scanner scanner = new Scanner(System.in);
-        return scanner.next();
+//        Scanner scanner = new Scanner(System.in);
+        return input.next();
     }
 
     public static boolean save(ToDoList aToDoList) {
