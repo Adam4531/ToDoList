@@ -28,7 +28,6 @@ public class Main {
     }
 
     static int displayMainMenu() {
-//        Scanner input = new Scanner(System.in);
         System.out.println("Main Menu:");
         System.out.println("=================");
         System.out.println("0. Exit");
@@ -52,15 +51,19 @@ public class Main {
         System.out.println("5. Delete list");
     }
 
-    public static ToDoList create() {
+    public static ToDoList create() { //TODO debugging
         String title = setTitle();
         ToDoList toDoList = new ToDoList(title);
         System.out.print("Do you want to add some tasks (Y/N) now? ");
         char ch = input.next().charAt(0); //TODO change variable name
         if(ch == 'Y' || ch == 'y'){
-            System.out.println("If you want to stop adding new tasks press 0 then enter: ");
-            String task = input.next();
+            System.out.println("If you want to stop adding new tasks press 0 then enter");
+            int counter = 0;
+            String task = "";
+
             while(!task.equals("0")){
+                System.out.print("Adding task number " + ++counter + " ");
+                task = input.nextLine();
                 toDoList.addElement(task);
             }
         }
@@ -69,10 +72,10 @@ public class Main {
         return toDoList;
     }
 
-    public static String setTitle() { //FIXME NoSuchElementException
+    public static String setTitle() { //FIXME title usually have more than one word
         System.out.println("Name a new list: ");
-//        Scanner scanner = new Scanner(System.in);
-        return input.next();
+        String title = input.next();
+        return title;
     }
 
     public static boolean save(ToDoList aToDoList) {
