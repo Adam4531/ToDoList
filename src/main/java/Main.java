@@ -37,7 +37,6 @@ public class Main {
         System.out.println("=================");
         System.out.print("> ");
         int choice = input.nextInt();
-        input.close();
 
         return choice;
     }
@@ -56,6 +55,15 @@ public class Main {
     public static ToDoList create() {
         String title = setTitle();
         ToDoList toDoList = new ToDoList(title);
+        System.out.print("Do you want to add some tasks (Y/N) now? ");
+        char ch = input.next().charAt(0); //TODO change variable name
+        if(ch == 'Y' || ch == 'y'){
+            System.out.println("If you want to stop adding new tasks press 0 then enter: ");
+            String task = input.next();
+            while(!task.equals("0")){
+                toDoList.addElement(task);
+            }
+        }
         save(toDoList);
 
         return toDoList;
